@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Amount</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background : url("https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-techstyle-income-graph-in-3d-a-high-tech-grid-background-enhances-image_3637129.jpg") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            background-color: white;
+            text-align: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        /* Styles for income and expenditure rows */
+        .income {
+            background-color: #e3f2fd; /* Light blue for income */
+            color: #0d47a1; /* Dark blue text for income */
+        }
+        .expenditure {
+            background-color: #ffebee; /* Light red for expenditure */
+            color: #ef0909; /* Dark red text for expenditure */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="entriesTable">
+            <thead>
+                <tr>
+                    <th>Date & Time</th>
+                    <th>Description</th>
+                    <th>Income/Expenditure</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button class="button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        function displaydemo() {
+            const demo = JSON.parse(localStorage.getItem('demo')) || [];
+            const tableBody = document.getElementById('entriesTable').getElementsByTagName('tbody')[0];
+
+            demo.forEach(entry => {
+                const row = tableBody.insertRow();
+                row.className = entry.type === 'income' ? 'income' : 'expenditure'; // Apply the class based on type
+                row.insertCell(0).textContent = entry.dateTime;
+                row.insertCell(1).textContent = entry.description;
+                row.insertCell(2).textContent = `${entry.type === 'income' ? '$' : '-$'}${entry.amount.toFixed(2)}`;
+            });
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        window.onload = function() {
+            displaydemo();
+        };
+    </script>
+</body>
+</html>

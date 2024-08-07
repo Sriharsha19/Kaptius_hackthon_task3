@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income and Expenditure Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+             background : url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0ODQ0NDQ8NDQ0NFREWFxURFRYYHSggGBslGxUVITEiJSkrLi4uFx8zQTMtOCotLisBCgoKDg0OGxAQGSsmICU3LjE3Ky8rLy0tLSstKy8tKy0rLS0uLSsrLS8tLS0tLS0tLS0tLS0tLS8tLS0tKy0tLf/AABEIAMIBAwMBEQACEQEDEQH/xAAbAAEBAAIDAQAAAAAAAAAAAAAAAQUHAgQGA//EAEUQAAIBAgIFBgkKBAYDAAAAAAABAgMRBBIFBhMhMQc0QVFxsSIyM2FydJGysyNCUlNzgZLD0dIWJDXBFRdUgpOiFIOh/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAQFAgMGAQf/xAA0EQEAAgECAwYDBwQDAQAAAAAAAQIDBBEyM3EFEiExUcEGFEETFTRhgZHwIqGx0UJS4Rb/2gAMAwEAAhEDEQA/ANpgcgAFAoFAoFAAUAAAoAAAAAAAAAAAgAABAIAAgEAjAjAgACgUCgUCgAKBQAACgAAACgAAACAAAACAAAEAgEAgEAgEAICgUCgUCgUABQAFAAAKAAAAAAAAAgAABAAEAAQCMCMCMCAAKBQAHIABQKAAAUABQAAAAAAAAAAAAgEAAAIBAIBAIBAAFAoHIABQKAAoACgAAFAAAAAAAAAAAEAAQCAAIBAIBAIAQFQFAoFAoACgAKAAAUAAAAAAAAAAAAAEAAQCAQABxYEYEAAUDkAAoFAAUCgAAFAAAAACgAAAAAAAQABAIAAgEAgEYEAgHJAUCgUABQAFQACgAAACgAAACgAI2lve5HsRv5PJmIjeUUlwvv8A7Hs1mPNhTLS87VlTFsdHE6Ww9LE0cJOoo18RGUqUOtLr6r77ddmYTesWis+aRTS5b4rZqx/THnLumaOAQCARgRgRgQCAEBQKBQKAAoFAAUAAAoAABQAAAAA6WmMNWqUfkbZoTU2m7Z4pPwV5+D+42YrxW28tGoxzkptDA6JxtfEYinGMZ5acr1ZuLUYxXFX63wsbsuSO7sj6fT2rbvSzum9KUsDhqmJrPwaa3RXjVJvxYR87ZCveKV3lb6XTX1OWMdPOf7fm0RpLSlfE4meLqTarSmpxcXbZWfgqPUlZW7CptebW70vo2DS48OGMNY8P8+v7ty6mawx0lhVOTSxFK0MRBbvD6JpdUuPtXQWeDL36/m4PtTQTpM23/GfKfb9GeNytQABAIBAIwIBEBUBQKgKAAoFAAUABQAACgAAFAAWKu7ID54l5mqUfFW+o/N1feeT6M48I3cm0l1JLsSR6w85aV1+1l/xDE5KUv5TDtxpWe6rPhKq+5ebtZV58vft4eTvux+zvlcXetH9dvP8AKPT/AG8waFwy2rGnJ6OxUK8byg/Ar00/KUm967VxXnRsxZJpbdB7Q0VdXhmk+f0n0lvTC4iFanCrSkp06kYzhJcJRa3MtoneN4fOsmO2O00tG0w+rPWCAQCAQCAQCIDkgKBQAFAAUCgAKAAoAABQAHQjpWk81nui2uK8K3SiRGCZhBtrdrbRHg7sJqSUk7qSTT8zNExtOybE7xvDnVqbOPC857ooxmWdY3fOlDKrcW98n1y6WIh5ad5fHSWChiaNShUlOMKscs9nLJJx6Y36nwPLV70bS2YM04bxeu28erVvKFqthNHUcPPDKqpVKsoSz1M6yqN924gajDWkR3XX9jdpZ9XktXLMbRHpt9XiLEV0L0/J/oLD6QxFaliVNxp0NpHJPI82eK7mb9PjreZiVP2zrcukxVti23mfT8m2dC6Io4CjsKDqbJSlKMak8+Vvilu3K+/tbLGlIpG0OL1Wqvqb/aZNt/yjZ3zNGQCMCMCMCMCAEBQKBQAFAoACgAKAAoADjKrGLUW0m96XTbrMq0m3k1ZM1KcUrCakrp3R5NZidpZ0vF43h9IRu+88ZMDiNAwqVtpRns6aledOzlGpK+9J3vFe03RntEbI9tLTvbshU0vSjLJJKM4bpx6E+hewUxd6N5Y5tR3Ld2q4fEKrnxF7pZoxS+alx+9mm1e7M7peO/frER9WDWu+E+rxP4Kf7is+9cP5rn7i1HrX93KOuuEbS2eI3tLxaf7j2O1MMztG7yexNREb7wwvK+v5fB+sVPhm7WcMJfw34Zr9Pdq9ogOwiXt+SHnuK9V/MiS9HxS534l5FOvs2sWDjUAgEYEYEAjAARAUCgUAgKgKgKgAFAAUCgAMJp/A186r0Xmk4xhsb5ZOzbvF8Okk4ckRG0oWp083nvQ7OjJRo0FGtJxrylepFu9m1wXmSXE8vE5LeHk9rtp8fj5y7ksUppU6T8KV8zXzY9f6Gm1JrPik4ckXjvPqssUluSS3bzFs2mWK0noWjiZ7TazpTaSk6co+GlwvdPf5zOuSYjZjOGJneau7Rw9OjQdKl4kITS33bdm22+ts13neJbKRtaGoo8EcTL6G+lLxo+ku8zxccdYYZOCek/4el5Xub4P1ip8NnUavhhQfDnNydPdq9kB1sPbckfPcV6r+ZEl6Pilz/wAScinX2bVZYOOQCARgRgAOIACICgUCgAKgKgKgAFAoGP01ialGnGcE8uf5SS+bG27/AO9JuwxWbeKLq7Win9LjoTGvEyqWaywjHdfjJ9X3LuM89IrEbNWjveZnefBk4TjZyurJXNE1mPNMrkrbyl8aLc3tZdO6muqHX2vuPJ8PBm6GndFTxKhKlUVOrTuk5puEovodt67TdhyxTz8kfPg+0XQOi54aM3VqKpVqZczimoRir2ir9r3mObJF58PJlhw/Zwx+tivUo+hLvIuRe9m8NmEUV1I1rJ6LV1fy+I7X7hsrwyqtdzafz6tbR4LsONl2T6UvGj6S7zLFxx1hrycE9Jel5Xub4T1ip8NnU6vhhQ/DnNydPdrBkB1sPbckfPcV6r+bEl6Pilz/AMScinX2bUZYOOQCARgRgQCAAOKAoFAqAqAoFQFQHX0jOpGjUlSi5TSVkld2urtdiuzPHETaN2rNNopPd82N0RpKWIrQpwadotzbfzevtvYk5q1iu6BprZJyRG7O5Xe1t5DWj5Yhqb2K3xt8p1NP5v3mUeHixnx8HVr4BQozjhYQozyyyZEoJt8U7dfC5nXJvaJvLXfFtSYpGzDaNp42pWhCpSqU6UH8q6llGUV81fSv5iXlnHFN4mJlA02PL9pG8TDNack44PFSi3GSw9ZqUW001B2aa4ETBG+Wu/rC0nyaq/xLE/6nEf8APU/U6T7HH/1j9mvdkNXsfiJY3CxlXryi69NOMq1SUWr8GmzRqcVIxWmKx5ej2J8XsNavKUfQl3nMZF32bw2YVGtYvQ6veQxHa/cNkcMqvXc2n8+rW0eCONl2LnS8aPpLvMsXHHWGGTgnpL0vK9zfCesVPhnU6vhhQfDvNydPdrBkB1r23JHz3Feq/mQJej4pUHxJyKdfZtMsHHAEYEAgEAgEAgFAoFAoFAqAoEr1HFKEfHn/ANV0s9h5L4U8BRhd04Rpze91IxSm31t9J7N5nzYxjrHjEMHiNZpQnUVRqM4Nwavwt5ibTBE1hVZNTaLzO+2zP4FPZQck1OcYzmnxztJu/d9xCvxTstcczNYmfNitM1pxrWjOcVkjujKSXF9RYaWlZx7zCDqrTGTwl0liav1lT8cv1JH2dPSGjv29XdrTlLRuMcpOT2OJ3ybb8n5yHaIjUV2/JP08zOPxauL9myerfPsJ6xT7yPquTbo9jze51p8pS9CXecrkXnZvDZhUa1i9Bq95DEdr9w2Rwyq9dzafz6tbR4I4yXYudLxo+ku8zxccdYYZOCekvS8rvN8J6xP3DqdXwwoPh3m5Onu1gyA62HteSTnuJ9V/MgS9HxSoPiPkU6+zahYOOQCAQCAAIBAOIFAXAtwLcCgcrgYipppQrVIyVlTllS67dLJVMNZqrc2pvXJtHlDvaOrKtDb9NS9vNFNqy9lzRkr3Z7qbiv36xb1dfWHSM8LQVWmoyltIwtO7Vmn1PzG3TYoyX7so+v1FsGLv1893lKmsc5TVWWFwcqkbZakqTc1bhZ3uWMaSsRtFp26qKe08kz3prXfozOgNYq+KxCo1IUoxcJyvBSTuu1kXUaWmOnehYaDtDLnzdy0Rts7Gm/Lf7I97Nmk5aRquY6JKR3fn/TMZ9lifhkG/4mv6LHTctrAvmbJ6t8+wn29PvI+q5Nuj2PN7jWjylL0Jd5yuRedm8NmGNaxZ/V/yGI7X7hsjhlV67m0/n1a3jwRxkuxc6XjR9Jd5ni446wwycE9Jel5XOb4T1ifuM6nV8MKD4d5uTp7tYMgOth7Xkk57ifVfzIEvR8UqD4j5FOvs2ncsHHI2BLgS4EuBLgS4ADiBQAFAqAqAr3b3wW99geTOzE43D4CvNTqSi5bruNSUcy89uJIp9rWNohCyTpsk72l3qeMw8IqMalOMYqyimklFdCRhOO8zvMN0ajDEbRLGa6c0X29Pukb9FzELtf8AD/rDwxbuYZzU3nsfsqv9iJreV+yz7I/E/pLPaa8t/sj3s1aTlrfVcx0SUjO/P+mYz7LE/CIN/wATX9FjpuW1iXzYyWrfPsJ9vT7yPquTboyh7nWfylL0Jd5yuRd9m8NmGNayZ/V/yFftfuGdeGVVrubT+fVraPBHHOyc6XjR9Jd5nj446wwycE9Jel5Xeb4T1ifw2dRq+GHP/DvNydPdrCTIDroe15JOe4n1X8yBL0fFLn/iTkU6+zabRYOORoCWAlgJYCWYCzAlgPtswLswGzAuyAuzAuzA4V4eBP0JdzPa+cMb8MvGos1Ck1ufYzwZnXiNsGvt6fdI0aLmpfa/4eOsPBlu5lnNS1/PR+yq/wBiLreV+yy7J/E/pLPad8v/AOuPezVpOWttXzGPJSNuyL/peM+yxPwiDf8AE1/RZaXltYF62slq3z7CesU/eI+q5Nuj2PN7nWl/KUrfQl3nK5F52bw2YVM1LLZn9XpLYYjtfuGyvDKq13Np/Pq1vHguw452LlT8aPpLvM8fHHVhk4J6S9LyvyX/AI2Dt/qJ/DZ1Gr4YUHw5zsnT3atbIDr4h7rki57ifVfzIEvR8Uue+JORTr7Nq7iwcatkAygNmA2QDZANkBNkB98gFyAMgFygMoFsgOFSkpJq7V01u857E7PJjeNmLWrtH6dX2x/Q3/MW9EP5GnrJ/DtH6dX2x/QfMW9D5GnrLsaV0RTxdPZTlUjHOp3hJXur9afWYYs047d6GzU6auop3LTLEfwRhfrcT+Kn+0k/P39IQPuXD/2n+3+nb0Xqvh8LV2sKleUsso2lKNrO3Ul1GvLq7ZK92Yhv03ZuPBfv1md3bxWh6VWWdyqJ2Ssmrbu1GOPU2xxtEJOTT1vO8y+X8P0fp1fbH9DZ87f0hr+Tp6y+ktDUnQqUM1TLVjOMpZlmSkrO26xqnPM3i/1hIx4opXuwwf8Al9g/rsV+Kl+wl/eeX0hl3IfbBaj4SjVp1Y1cS5U5xmlKVPK2n02iYZO0Ml6zWYjxexWGVx2hKNdxcpVI5U14LW/2orrViUvBqrYYmKxHi6/8MUPrK3th+hj9nDf95ZPSHawmhqNKMop1JKfHM1dbrdCPYpG2zRl1NslotO3gwi1Bwn12J/FT/aVv3Th9ZWf37n9K/wB/9qtQ8ImntsTud/Gp/tPY7KxRO+8vJ7czzG20f3/27msOqeG0jCnTrSrQVObmnSlFNtq1ndMnZMUXjaUPR9oZNJabY4jx9WC/yr0f9djP+Sn+w1fKU/NY/wD0Wp9K/t/6y2rmpOF0dVnVo1K85VKezaqyg42zJ3VorfuNmPBXHO8IWt7Uy6usVyRHh4+D0aoxXQbla5KmuoPFUUBcp6GUBlDwygMoEAAAAACgAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAA+WYBmAZgLmAZgGYBmAZgGYBmAZgGYBmAuYBmAZgGYBmAZgGYBmAZgGYBmAZgGYCZgGcBnAZwGYBmAZgOvnAZwGcBnAucBnAZwGcBnAZwGcBnAZwGcC5wJnAZwGcBnAZwGcBnAZwGcBnAZwGcCZwG0AbQBtAG0Am0A620AbQBtAG0AbQBtAG0AbUBtQG1Au1Am1AbUBtQG1AbUBtQG1AbUBtQG0AbUBtQG1AbUBtQJtAG0AbQBtQG1Am0AbQD4gAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAACAf//Z") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .top-right-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box {
+            padding: 15px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            background-color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .button {
+            margin: 40px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0d74cf;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .tables-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px 0;
+        }
+        table {
+            width: 45%;
+            border-collapse: collapse;
+            margin: 0 10px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .filter-container {
+            margin: 20px;
+        }
+        .filter-container input[type="date"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right-box">
+        <div id="totalAmountBox" class="box">$0.00</div>
+         <button class="button" onclick="redirectToTotalPage()">Total Amount</button>
+    </div>
+
+    <div class="button-container">
+        <button class="button" onclick="addIncome()">Add Income</button>
+        <button class="button" onclick="addExpenditure()">Add Expenditure</button>
+    </div>
+
+    <div class="filter-container">
+        <label for="dateFilter">Filter by date:</label>
+        <input type="date" id="dateFilter" onchange="filterByDate()">
+    </div>
+
+    <div class="tables-container">
+        <div>
+            <center><h2>Income</h2></center>
+            <table id="incomeTable">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Description</th>
+                        <th>Income</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div>
+            <center><h2>Expenditure</h2></center>
+            <table id="expenditureTable">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Description</th>
+                        <th>Expenditure</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function addIncome() {
+            const description = prompt("Enter income description:");
+            const amount = parseFloat(prompt("Enter income amount:"));
+            if (isNaN(amount) || amount <= 0 || !description) return alert('Invalid input!');
+
+            const dateTime = new Date().toLocaleString();
+            const incomeTable = document.getElementById('incomeTable').getElementsByTagName('tbody')[0];
+            const row = incomeTable.insertRow();
+            row.insertCell(0).textContent = dateTime;
+            row.insertCell(1).textContent = description;
+            row.insertCell(2).textContent = `$${amount.toFixed(2)}`;
+
+            saveEntry('income', dateTime, description, amount);
+        }
+
+        function addExpenditure() {
+            const description = prompt("Enter expenditure description:");
+            const amount = parseFloat(prompt("Enter expenditure amount:"));
+            if (isNaN(amount) || amount <= 0 || !description) return alert('Invalid input!');
+
+            const dateTime = new Date().toLocaleString();
+            const expenditureTable = document.getElementById('expenditureTable').getElementsByTagName('tbody')[0];
+            const row = expenditureTable.insertRow();
+            row.insertCell(0).textContent = dateTime;
+            row.insertCell(1).textContent = description;
+            row.insertCell(2).textContent = `$${amount.toFixed(2)}`;
+
+            saveEntry('expenditure', dateTime, description, amount);
+        }
+
+        function saveEntry(type, dateTime, description, amount) {
+            const demo = JSON.parse(localStorage.getItem('demo')) || [];
+            demo.push({ type, dateTime, description, amount });
+            localStorage.setItem('demo', JSON.stringify(demo));
+            displaydemo();
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const demo = JSON.parse(localStorage.getItem('demo')) || [];
+    const total = demo.reduce((sum, entry) => {
+        return entry.type === 'income' ? sum + entry.amount : sum - entry.amount;
+    }, 0);
+
+    const totalAmountBox = document.getElementById('totalAmountBox');
+    totalAmountBox.innerText = `$${total.toFixed(2)}`;
+
+    // Apply color coding based on the total amount
+if (total < 0) {
+    // If the total is less than 0, set the box color to red
+    totalAmountBox.style.backgroundColor = 'red';
+    totalAmountBox.style.color = 'white';
+} else if (total < 20000) {
+    // If the total is less than 20000 but not less than 0, set the box color to green
+    totalAmountBox.style.backgroundColor = 'green';
+    totalAmountBox.style.color = 'white';
+} else if (total === 20000) {
+    // If the total is exactly 20000, set the box color to white with black text
+    totalAmountBox.style.backgroundColor = 'white';
+    totalAmountBox.style.color = 'black';
+} else {
+    // If the total is greater than 20000, set the box color to red
+    totalAmountBox.style.backgroundColor = 'red';
+    totalAmountBox.style.color = 'white';
+}
+    // Store the total amount in local storage
+    localStorage.setItem('totalAmount', total.toFixed(2));
+}
+
+        function redirectToTotalPage() {
+            calculateTotal(); // Ensure total is updated before redirecting
+            window.location.href = 'total.html';
+        }
+
+        function displaydemo() {
+            const demo = JSON.parse(localStorage.getItem('demo')) || [];
+            const incomeTable = document.getElementById('incomeTable').getElementsByTagName('tbody')[0];
+            const expenditureTable = document.getElementById('expenditureTable').getElementsByTagName('tbody')[0];
+
+            incomeTable.innerHTML = '';
+            expenditureTable.innerHTML = '';
+
+            demo.forEach(entry => {
+                const table = entry.type === 'income' ? incomeTable : expenditureTable;
+                const row = table.insertRow();
+                row.insertCell(0).textContent = entry.dateTime;
+                row.insertCell(1).textContent = entry.description;
+                row.insertCell(2).textContent = `$${entry.amount.toFixed(2)}`;
+            });
+        }
+
+        function filterByDate() {      
+    const selectedDate = document.getElementById('dateFilter').value;
+    if (!selectedDate) return; // Exit if no date is selected
+
+    // Convert selected date to the format used in `dateTime` (e.g., "MM/DD/YYYY")
+    const formattedSelectedDate = new Date(selectedDate).toLocaleDateString();
+
+    const demo = JSON.parse(localStorage.getItem('demo')) || [];
+    const incomeTable = document.getElementById('incomeTable').getElementsByTagName('tbody')[0];
+    const expenditureTable = document.getElementById('expenditureTable').getElementsByTagName('tbody')[0];
+
+    incomeTable.innerHTML = '';
+    expenditureTable.innerHTML = '';
+
+    demo.forEach(entry => {
+        // Extract the date part from the entry's `dateTime`
+        const entryDate = new Date(entry.dateTime).toLocaleDateString();
+
+        if (entryDate === formattedSelectedDate) {
+            const table = entry.type === 'income' ? incomeTable : expenditureTable;
+            const row = table.insertRow();
+            row.insertCell(0).textContent = entry.dateTime;
+            row.insertCell(1).textContent = entry.description;
+            row.insertCell(2).textContent = `$${entry.amount.toFixed(2)}`;
+        }
+    });
+}
+
+        
+
+        window.onload = function() {
+            displaydemo();
+            calculateTotal(); // Update the total amount on page load
+        };
+    </script>
+</body>
+</html>
